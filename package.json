@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "fsm.view",
-        "title": ""
+        "title": "View state machine diagram"
       }
     ]
   },
