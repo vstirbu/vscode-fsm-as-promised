@@ -11,12 +11,14 @@ export default class DiagramDocumentContentProvider implements vscode.TextDocume
 
   public provideTextDocumentContent(uri: vscode.Uri): Thenable<string> {
     return vscode.workspace.openTextDocument(vscode.Uri.parse(uri.query)).then(document => {
+      const source = document.getText();
       try {
-        graph(document.getText(), 'fancy');
+        const diagram = graph(source, 'fancy');
+        
+        return diagram;
       } catch (error) {
-        console.log('no fsm found in file');
+        return 'no fsm found in file';
       }
-      return document.getText();
     });
   }
 
