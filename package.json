@@ -36,6 +36,7 @@
     "@types/mocha": "^2.2.32"
   },
   "dependencies": {
-    "fsm2dot": "^1.0.0"
+    "fsm2dot": "^1.0.0",
+    "mermaid": "^6.0.0"
   }
 }
