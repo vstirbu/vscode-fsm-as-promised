@@ -38,27 +38,20 @@ export default class DiagramDocumentContentProvider implements vscode.TextDocume
     <head>
         <base href="">
         <script src="${this._context.extensionPath}/node_modules/mermaid/dist/mermaid.min.js"></script>
-        <style>
-        th {
-          border-bottom: 2px solid black;
-        }
-
-        tr:only-child th {
-          border-bottom: 0;
-        }
-        </style>
+        <link rel="stylesheet" href="${this._context.extensionPath}/styles/light.css">
     </head>
     <body>
+        <!--
         <script type="text/javascript">
             css = document.createElement('link');
             style = document.body.classList.contains('vscode-dark') ? 'dark' : 'forest';
             
             css.setAttribute('rel', 'stylesheet');
-            // css.setAttribute('type', 'text/css');
             css.setAttribute('href', '${this._context.extensionPath}/node_modules/mermaid/dist/mermaid.' + style + '.css');
 
-            document.body.appendChild(css);
+            document.head.appendChild(css);
         </script>
+        -->
 
         <div class="mermaid">
         ${diagram}
